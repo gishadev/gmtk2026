@@ -4,6 +4,7 @@
     "com.gishadev.tools": "https://github.com/gishadev/gishadev-tools.git",
     "com.gishadev.unity-setup": "https://github.com/gishadev/unity-setup.git",
     "com.kyrylokuzyk.primetween": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
+    "com.propixelizer": "ssh://git@github.com/ProPixelizer/ProPixelizer.git#upm_compliant",
     "com.unity.2d.animation": "13.0.5",
     "com.unity.ai.navigation": "2.0.13",
     "com.unity.cinemachine": "3.1.7",
