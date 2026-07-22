@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5659022293cc440abe4d635ad6d06621, type: 3}
+  m_Name: GameUIData
+  m_EditorClassIdentifier: 
+  <OverlayHintPrefab>k__BackingField: {fileID: 4811130457274446624, guid: fd7bf8cc07d53a94fadf5a1eb1f5a763, type: 3}
+  <InventorySlotPrefab>k__BackingField: {fileID: 5553098724523782320, guid: d96903fc82ef7484598bb301c1af1a18, type: 3}

@@ -1,0 +1,17 @@
+using gishadev.walkingSimulator.Core;
+using UnityEngine;
+
+namespace gishadev.walkingSimulator.MovementManager
+{
+    public class KinematicPlayerMovementContext : PlayerMovementContext
+    {
+        public CharacterController Controller { get; }
+
+        public KinematicPlayerMovementContext(CharacterController controller, Transform transform,
+            IPlayerInputService inputService,
+            CharacterMovementDataSO characterMovementDataSO) : base(transform, inputService, characterMovementDataSO)
+        {
+            Controller = controller;
+        }
+    }
+}
