@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.Interactions.EnvironmentInteractionManager
+namespace gishadev.gmtk.Interactions.EnvironmentInteractionManager.Interactables
 {
     public class ButtonInteractable : MonoBehaviour, IInteractable
     {

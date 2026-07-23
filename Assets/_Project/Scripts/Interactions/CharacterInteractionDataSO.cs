@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.InteractionManager
+namespace gishadev.gmtk.Interactions
 {
     [CreateAssetMenu(fileName = "CharacterInteractionDataSO", menuName = "ScriptableObjects/WalkingSim/CharacterInteractionDataSO")]
     public class CharacterInteractionDataSO : ScriptableObject

@@ -1,10 +1,9 @@
 using gishadev.gmtk.Core;
-using gishadev.walkingSimulator.InteractionManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
 
-namespace gishadev.walkingSimulator.Interactions.EnvironmentInteractionManager
+namespace gishadev.gmtk.Interactions.EnvironmentInteractionManager
 {
     public class CharacterEnvironmentInteractor : MonoBehaviour
     {

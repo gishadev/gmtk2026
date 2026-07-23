@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.PhysicsDragManager
+namespace gishadev.gmtk.Interactions.PhysicsDragManager
 {
     public interface IPhysicsDraggable
     {

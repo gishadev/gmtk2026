@@ -1,4 +1,6 @@
-namespace gishadev.walkingSimulator.MovementManager.Modules
+using gishadev.gmtk.MovementManager.Contexts;
+
+namespace gishadev.gmtk.MovementManager.Modules
 {
     public class SprintMovementModule : IMovementModule
     {

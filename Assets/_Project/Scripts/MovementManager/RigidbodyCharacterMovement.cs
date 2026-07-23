@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using gishadev.gmtk.Core;
-using gishadev.walkingSimulator.MovementManager.Modules;
+using gishadev.gmtk.MovementManager.Contexts;
+using gishadev.gmtk.MovementManager.Modules;
+using gishadev.gmtk.MovementManager.Modules.Rigidbody;
 using UnityEngine;
 using VContainer;
 
-namespace gishadev.walkingSimulator.MovementManager
+namespace gishadev.gmtk.MovementManager
 {
     [RequireComponent(typeof(Rigidbody))]
     public class RigidbodyCharacterMovement : MonoBehaviour

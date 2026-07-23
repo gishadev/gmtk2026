@@ -1,10 +1,11 @@
-using System;
 using gishadev.gmtk.Core;
-using gishadev.walkingSimulator.InteractionManager;
+using gishadev.gmtk.Interactions.InventoryManager.InventorySystems;
+using gishadev.gmtk.Interactions.InventoryManager.Pickables;
+using gishadev.gmtk.Interactions.InventoryManager.Usables;
 using UnityEngine;
 using VContainer;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager
 {
     public class CharacterInventory : MonoBehaviour
     {

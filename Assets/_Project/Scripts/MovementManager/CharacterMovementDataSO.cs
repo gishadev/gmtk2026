@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.MovementManager
+namespace gishadev.gmtk.MovementManager
 {
     [CreateAssetMenu(fileName = "CharacterMovementDataSO", menuName = "ScriptableObjects/WalkingSim/CharacterMovementDataSO")]
     public class CharacterMovementDataSO : ScriptableObject

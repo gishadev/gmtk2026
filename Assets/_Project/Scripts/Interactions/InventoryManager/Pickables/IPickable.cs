@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager.Pickables
 {
     public interface IPickable
     {

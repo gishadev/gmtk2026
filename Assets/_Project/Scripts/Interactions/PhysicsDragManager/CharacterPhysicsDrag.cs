@@ -1,10 +1,9 @@
 using gishadev.gmtk.Core;
-using gishadev.walkingSimulator.InteractionManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
 
-namespace gishadev.walkingSimulator.PhysicsDragManager
+namespace gishadev.gmtk.Interactions.PhysicsDragManager
 {
     public class CharacterPhysicsDrag : MonoBehaviour
     {

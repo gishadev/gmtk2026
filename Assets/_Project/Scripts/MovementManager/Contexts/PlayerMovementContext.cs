@@ -1,7 +1,7 @@
 using gishadev.gmtk.Core;
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.MovementManager
+namespace gishadev.gmtk.MovementManager.Contexts
 {
     public abstract class PlayerMovementContext
     {

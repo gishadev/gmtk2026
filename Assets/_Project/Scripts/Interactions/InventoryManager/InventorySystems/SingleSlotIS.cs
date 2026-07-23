@@ -1,7 +1,8 @@
+using gishadev.gmtk.Interactions.InventoryManager.Usables;
 using UnityEngine;
 using VContainer;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager.InventorySystems
 {
     public class SingleSlotIS : InventorySystem
     {

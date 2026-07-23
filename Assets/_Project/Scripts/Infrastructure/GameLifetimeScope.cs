@@ -1,8 +1,8 @@
+using gishadev.gmtk.MovementManager;
+using gishadev.gmtk.Interactions;
 using gishadev.gmtk.Core;
 using gishadev.gmtk.kids;
-using gishadev.walkingSimulator.MovementManager;
 using gishadev.walkingSimulator.EventsManager;
-using gishadev.walkingSimulator.InteractionManager;
 using gishadev.walkingSimulator.UI;
 using UnityEngine;
 using VContainer;

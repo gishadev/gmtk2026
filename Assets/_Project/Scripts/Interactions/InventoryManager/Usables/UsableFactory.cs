@@ -2,7 +2,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager.Usables
 {
     public class UsableFactory
     {

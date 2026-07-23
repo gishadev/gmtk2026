@@ -1,4 +1,4 @@
-using gishadev.walkingSimulator.Interactions.InventoryManager;
+using gishadev.gmtk.Interactions.InventoryManager;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

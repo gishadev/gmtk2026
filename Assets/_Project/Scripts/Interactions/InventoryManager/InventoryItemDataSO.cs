@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager
 {
     [CreateAssetMenu(fileName = "InventoryItemData", menuName = "ScriptableObjects/WalkingSim/InventoryItemDataSO")]
     public class InventoryItemDataSO : ScriptableObject

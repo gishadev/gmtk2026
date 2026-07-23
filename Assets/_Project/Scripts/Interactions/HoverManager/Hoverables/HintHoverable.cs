@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using VContainer;
 
-namespace gishadev.walkingSimulator.InteractionManager
+namespace gishadev.gmtk.Interactions.HoverManager.Hoverables
 {
     /// <summary>
     /// Show hints on hovered.

@@ -1,7 +1,8 @@
 using Cysharp.Threading.Tasks;
+using gishadev.gmtk.MovementManager.Contexts;
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.MovementManager.Modules
+namespace gishadev.gmtk.MovementManager.Modules
 {
     public class CrouchMovementModule : IMovementModule
     {

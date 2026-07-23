@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer;
 
-namespace gishadev.walkingSimulator.InteractionManager
+namespace gishadev.gmtk.Interactions.HoverManager
 {
     public class CharacterHover : MonoBehaviour
     {

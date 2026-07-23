@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager.Pickables
 {
     [RequireComponent(typeof(Rigidbody))]
     public class SimplePickable : MonoBehaviour, IPickable

@@ -1,4 +1,4 @@
-namespace gishadev.walkingSimulator.Interactions.EnvironmentInteractionManager
+namespace gishadev.gmtk.Interactions.EnvironmentInteractionManager
 {
     public interface IInteractable
     {

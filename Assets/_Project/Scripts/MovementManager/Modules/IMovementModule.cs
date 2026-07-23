@@ -1,4 +1,4 @@
-namespace gishadev.walkingSimulator.MovementManager.Modules
+namespace gishadev.gmtk.MovementManager.Modules
 {
     public interface IMovementModule
     {

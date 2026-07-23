@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using gishadev.walkingSimulator.Interactions.InventoryManager;
+using gishadev.gmtk.Interactions.InventoryManager.Usables;
 using UnityEngine;
 
 namespace gishadev.walkingSimulator.EventsManager

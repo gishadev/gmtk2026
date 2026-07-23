@@ -1,4 +1,4 @@
-namespace gishadev.walkingSimulator.InteractionManager
+namespace gishadev.gmtk.Interactions.HoverManager
 {
     public interface IHoverable
     {

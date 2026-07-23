@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.Interactions.InventoryManager
+namespace gishadev.gmtk.Interactions.InventoryManager.Usables
 {
     public interface IUsable
     {
