@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace gishadev.walkingSimulator.Core
+namespace gishadev.gmtk.Core
 {
     public static class CameraPlaneConverter
     {

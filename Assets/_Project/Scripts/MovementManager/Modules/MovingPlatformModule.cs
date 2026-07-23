@@ -1,4 +1,4 @@
-using gishadev.walkingSimulator.Core;
+using gishadev.gmtk.Core;
 using UnityEngine;
 
 namespace gishadev.walkingSimulator.MovementManager.Modules

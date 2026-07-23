@@ -53,3 +53,4 @@ MonoBehaviour:
   characterMovementDataSO: {fileID: 11400000, guid: 878bc3d8b975b6d4498a2613e67eb6eb, type: 2}
   characterInteractionDataSO: {fileID: 11400000, guid: 1552dc0fb5cbf144f8e2389da8159a55, type: 2}
   gameUIDataSO: {fileID: 11400000, guid: c70d91ca81fc40e4bb2682509baeeffd, type: 2}
+  kidsDataSO: {fileID: 11400000, guid: a6ffd1edf3a5e7f42b03aa113b4b57e1, type: 2}

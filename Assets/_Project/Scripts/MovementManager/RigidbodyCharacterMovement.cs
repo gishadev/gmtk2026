@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using gishadev.walkingSimulator.Core;
+using gishadev.gmtk.Core;
 using gishadev.walkingSimulator.MovementManager.Modules;
 using UnityEngine;
 using VContainer;

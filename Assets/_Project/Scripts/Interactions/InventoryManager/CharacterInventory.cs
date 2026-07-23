@@ -1,5 +1,5 @@
 using System;
-using gishadev.walkingSimulator.Core;
+using gishadev.gmtk.Core;
 using gishadev.walkingSimulator.InteractionManager;
 using UnityEngine;
 using VContainer;

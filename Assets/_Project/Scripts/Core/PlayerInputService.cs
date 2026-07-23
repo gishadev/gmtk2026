@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using VContainer.Unity;
 
-namespace gishadev.walkingSimulator.Core
+namespace gishadev.gmtk.Core
 {
     public class PlayerInputService : IPlayerInputService, IInitializable, IDisposable
     {

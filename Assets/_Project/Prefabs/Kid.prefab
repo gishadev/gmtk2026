@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4985539889049324269}
   - component: {fileID: 5637306511307352144}
   - component: {fileID: 7182021374680220704}
-  - component: {fileID: 7337265592508411132}
+  - component: {fileID: 1292511949160627338}
+  - component: {fileID: -1519789333084249198}
   m_Layer: 0
   m_Name: Kid
   m_TagString: Untagged
@@ -228,7 +229,7 @@ MonoBehaviour:
   movementPlaneSourceBacking: 0
   syncPosition: 1
   syncRotation: 1
---- !u!114 &7337265592508411132
+--- !u!114 &1292511949160627338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,12 +238,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5357427211917894228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Script: {fileID: 11500000, guid: 25bdc465ab1840da8135acb75f61f5b1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.AIDestinationSetter
-  version: 1073741824
-  target: {fileID: 0}
-  useRotation: 0
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidAI
+--- !u!114 &-1519789333084249198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357427211917894228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa84194688a4826b7498392eb311a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.Kid
 --- !u!1001 &401363858812496681
 PrefabInstance:
   m_ObjectHideFlags: 0
