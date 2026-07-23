@@ -18,6 +18,8 @@ namespace gishadev.gmtk.kids
         /// <summary>True while the kid is hidden and not already reacting to being found.</summary>
         public bool IsFindable => IsHiding && !_fleeRequested && !_happyRequested;
 
+        public IState CurrentState => _stateMachine.CurrentState;
+        
         private StateMachine _stateMachine;
 
         private bool _hideRequested;
