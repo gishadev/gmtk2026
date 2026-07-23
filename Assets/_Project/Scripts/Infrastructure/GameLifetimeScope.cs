@@ -15,6 +15,7 @@ namespace gishadev.walkingSimulator.Infrastructure
         [SerializeField] private CharacterInteractionDataSO characterInteractionDataSO;
         [SerializeField] private GameUIDataSO gameUIDataSO;
         [SerializeField] private KidsDataSO kidsDataSO;
+        [SerializeField] private GameDataSO gameDataSO;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -22,10 +23,14 @@ namespace gishadev.walkingSimulator.Infrastructure
             builder.RegisterInstance(characterInteractionDataSO);
             builder.RegisterInstance(gameUIDataSO);
             builder.RegisterInstance(kidsDataSO);
-            
+            builder.RegisterInstance(gameDataSO);
+
             builder.Register<IEventBus, EventBus>(Lifetime.Singleton);
             builder.Register<PlayerInputService>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<OverlayHintController>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ScreenFader>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<LocationController>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<LocationTransitionController>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<GameController>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<KidsController>(Lifetime.Singleton).AsImplementedInterfaces();
         }

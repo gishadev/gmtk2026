@@ -167,7 +167,7 @@ Material:
     - _OutlineEnabled: 1
     - _OutlineScale: 1
     - _OutlineSpace: 0
-    - _OutlineWidth: 2
+    - _OutlineWidth: 1.5
     - _OverrideLightmapDir: 0
     - _Parallax: 0.005
     - _PixelSize: 3

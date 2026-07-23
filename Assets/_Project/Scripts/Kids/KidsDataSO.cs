@@ -13,8 +13,6 @@ namespace gishadev.gmtk.kids
         [field: Tooltip("Seconds the seeker must wait before hunting begins.")]
         [field: SerializeField] public float HideCountdown { get; private set; } = 10f;
 
-        [field: SerializeField] public int HappyCount { get; private set; } = 1;
-
         [field: Header("Seeker Detection")]
         [field: Tooltip("Max distance at which the seeker can spot a hiding kid.")]
         [field: SerializeField] public float DetectRadius { get; private set; } = 6f;

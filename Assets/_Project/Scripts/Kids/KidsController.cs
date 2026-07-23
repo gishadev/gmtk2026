@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using gishadev.gmtk.Core;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -19,15 +20,19 @@ namespace gishadev.gmtk.kids
 
         private readonly IObjectResolver _objectResolver;
         private readonly KidsDataSO _kidsData;
+        private readonly ILocationController _locationController;
 
         private readonly List<Kid> _kids = new();
         private readonly List<KidHidingSpot> _spots = new();
-        private readonly List<NextLocationPOI> _nextLocations = new();
 
-        public KidsController(IObjectResolver objectResolver, KidsDataSO kidsData)
+        private int _fledCount;
+
+        public KidsController(IObjectResolver objectResolver, KidsDataSO kidsData,
+            ILocationController locationController)
         {
             _objectResolver = objectResolver;
             _kidsData = kidsData;
+            _locationController = locationController;
         }
 
         public void Initialize()
@@ -43,11 +48,19 @@ namespace gishadev.gmtk.kids
 
         public void SpawnAndHideKids()
         {
-            _spots.Clear();
-            _spots.AddRange(Object.FindObjectsByType<KidHidingSpot>(FindObjectsSortMode.None));
+            ClearKids();
+            IsSeeking = false;
 
-            _nextLocations.Clear();
-            _nextLocations.AddRange(Object.FindObjectsByType<NextLocationPOI>(FindObjectsSortMode.None));
+            var location = _locationController.CurrentLocation;
+            if (location == null)
+            {
+                Debug.LogWarning("KidsController: no current location loaded; cannot spawn kids.");
+                return;
+            }
+
+            _spots.Clear();
+            if (location.HidingSpots != null)
+                _spots.AddRange(location.HidingSpots);
 
             var count = Mathf.Min(_kidsData.KidsCount, _spots.Count);
             if (count < _kidsData.KidsCount)
@@ -55,6 +68,8 @@ namespace gishadev.gmtk.kids
                     $"KidsController: requested {_kidsData.KidsCount} kids but only {_spots.Count} hiding spots exist. Spawning {count}.");
 
             var factory = new KidsFactory(_objectResolver, _kidsData);
+
+            _fledCount = 0;
 
             for (var i = 0; i < count; i++)
             {
@@ -80,17 +95,23 @@ namespace gishadev.gmtk.kids
                 return;
 
             RemainingToFind--;
-
-            // The kid leaves its hiding spot either way.
             kid.AssignedSpot?.Free();
 
-            var nextLocation = GetRandomNextLocation();
-            if (RemainingToFind >= _kidsData.HappyCount && nextLocation != null)
-                // Plenty remain -> flee to a next-location POI and disappear on arrival.
+            // The current location dictates how many kids run away; the rest are caught (happy).
+            var fleeAmount = _locationController.CurrentLocationData?.FleeAmount ?? 0;
+            var nextLocation = GetNextLocationPOI();
+
+            if (_fledCount < fleeAmount && nextLocation != null)
+            {
+                // Still within this location's flee quota -> run to the next-location POI and disappear.
+                _fledCount++;
                 kid.FleeTo(nextLocation);
+            }
             else
-                // Few remain (or nowhere to flee) -> caught for good.
+            {
+                // Flee quota met (or nowhere to flee) -> caught for good.
                 kid.MakeHappy();
+            }
 
             KidFound?.Invoke(RemainingToFind);
 
@@ -106,17 +127,30 @@ namespace gishadev.gmtk.kids
                 Object.Destroy(kid.gameObject);
         }
 
+        private void ClearKids()
+        {
+            foreach (var kid in _kids)
+            {
+                if (kid == null)
+                    continue;
+
+                kid.Escaped -= OnKidEscaped;
+                Object.Destroy(kid.gameObject);
+            }
+
+            _kids.Clear();
+        }
+
         private KidHidingSpot GetRandomFreeSpot()
         {
             var free = _spots.Where(s => !s.IsOccupied).ToList();
             return free.Count == 0 ? null : free[UnityEngine.Random.Range(0, free.Count)];
         }
 
-        private NextLocationPOI GetRandomNextLocation()
+        private IPOI GetNextLocationPOI()
         {
-            return _nextLocations.Count == 0
-                ? null
-                : _nextLocations[UnityEngine.Random.Range(0, _nextLocations.Count)];
+            var current = _locationController.CurrentLocation;
+            return current != null ? current.NextLocationPOI : null;
         }
     }
 }

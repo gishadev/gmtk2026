@@ -22,5 +22,8 @@ namespace gishadev.gmtk.Core
         event Action UsePerformed;
         event Action NextUsablePerformed;
         event Action PreviousUsablePerformed;
+
+        /// <summary>Enables/disables player gameplay input (e.g. locked during a location transition).</summary>
+        void SetInputEnabled(bool enabled);
     }
 }

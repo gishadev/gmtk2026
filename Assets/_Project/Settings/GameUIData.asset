@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <OverlayHintPrefab>k__BackingField: {fileID: 4811130457274446624, guid: fd7bf8cc07d53a94fadf5a1eb1f5a763, type: 3}
   <InventorySlotPrefab>k__BackingField: {fileID: 5553098724523782320, guid: d96903fc82ef7484598bb301c1af1a18, type: 3}
+  <ScreenFaderPrefab>k__BackingField: {fileID: 5833470646022527705, guid: 463f225e1e9e5ef43922a85fecf0ddf2, type: 3}

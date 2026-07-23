@@ -8,9 +8,6 @@ namespace gishadev.gmtk.kids
     {
         private FollowerEntity _followerEntity;
 
-        /// <summary>
-        /// True once the agent has arrived at its current destination.
-        /// </summary>
         public bool ReachedDestination => _followerEntity.reachedDestination;
 
         private void Awake()

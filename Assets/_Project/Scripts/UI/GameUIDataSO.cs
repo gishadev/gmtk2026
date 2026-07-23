@@ -7,5 +7,6 @@ namespace gishadev.walkingSimulator.UI
     {
         [field: SerializeField] public GameObject OverlayHintPrefab { get; private set; }
         [field: SerializeField] public GameObject InventorySlotPrefab { get; private set; }
+        [field: SerializeField] public GameObject ScreenFaderPrefab { get; private set; }
     }
 }

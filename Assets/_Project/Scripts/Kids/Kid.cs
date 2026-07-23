@@ -40,27 +40,37 @@ namespace gishadev.gmtk.kids
             _stateMachine.Tick();
         }
 
-        /// <summary>
-        /// Assigns a spot and sends the kid to hide there.
-        /// </summary>
+        private void InitStateMachine()
+        {
+            _stateMachine = new StateMachine();
+
+            var idle = new IdleState(this);
+            var hiding = new HidingState(this);
+            var happy = new HappyState(this);
+            var runningToNextLocation = new RunningToNextLocationState(this);
+
+            At(idle, hiding, () => _hideRequested);
+            At(hiding, runningToNextLocation, () => _fleeRequested);
+            At(hiding, happy, () => _happyRequested);
+
+            _stateMachine.SetState(idle);
+
+            void At(IState from, IState to, Func<bool> cond) => _stateMachine.AddTransition(from, to, cond);
+        }
+
         public void HideAt(IPOI spot)
         {
             AssignedSpot = spot;
             _hideRequested = true;
         }
 
-        /// <summary>
-        /// Assigns a next-location POI and makes the kid flee to it (then disappear on arrival).
-        /// </summary>
+        /// <summary>Sends the kid fleeing to a next-location POI, where it disappears on arrival.</summary>
         public void FleeTo(IPOI nextLocation)
         {
             AssignedSpot = nextLocation;
             _fleeRequested = true;
         }
 
-        /// <summary>
-        /// Kid has been caught for good.
-        /// </summary>
         public void MakeHappy()
         {
             _happyRequested = true;
@@ -78,27 +88,6 @@ namespace gishadev.gmtk.kids
 
             _escaped = true;
             Escaped?.Invoke(this);
-        }
-
-        private void InitStateMachine()
-        {
-            _stateMachine = new StateMachine();
-
-            var idle = new IdleState(this);
-            var hiding = new HidingState(this);
-            var happy = new HappyState(this);
-            var runningToNextLocation = new RunningToNextLocationState(this);
-
-            // Assigned a spot -> go hide.
-            At(idle, hiding, () => _hideRequested);
-            // Found while plenty remain -> flee to the next-location POI.
-            At(hiding, runningToNextLocation, () => _fleeRequested);
-            // Found while few remain -> caught for good.
-            At(hiding, happy, () => _happyRequested);
-
-            _stateMachine.SetState(idle);
-
-            void At(IState from, IState to, Func<bool> cond) => _stateMachine.AddTransition(from, to, cond);
         }
     }
 }

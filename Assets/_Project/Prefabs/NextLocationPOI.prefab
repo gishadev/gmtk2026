@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 739501875114237709}
   - component: {fileID: 217735570029757782}
+  - component: {fileID: 2842707458127638980}
+  - component: {fileID: 7753082397748528109}
   m_Layer: 0
   m_Name: NextLocationPOI
   m_TagString: Untagged
@@ -44,3 +46,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01e8dad86f14eb5a994fc45aa9e9af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.NextLocationPOI
+--- !u!114 &2842707458127638980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659723916347965812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4833dd9caebdf234bb21ad60287db3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.Core.LocationExitZone
+--- !u!65 &7753082397748528109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659723916347965812}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7, y: 7, z: 7}
+  m_Center: {x: 0, y: 0, z: 0}

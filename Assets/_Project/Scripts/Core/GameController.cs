@@ -16,6 +16,7 @@ namespace gishadev.gmtk.Core
         }
 
         [Inject] private IKidsController _kidsController;
+        [Inject] private ILocationController _locationController;
         [Inject] private KidsDataSO _kidsData;
 
         private Phase _phase;
@@ -23,9 +24,21 @@ namespace gishadev.gmtk.Core
 
         public void Initialize()
         {
-            // Kids start hiding to hiding spots poi's (only one kid at one poi)
-            _kidsController.SpawnAndHideKids();
             _kidsController.AllKidsFound += OnAllKidsFound;
+            _locationController.LocationLoaded += OnLocationLoaded;
+
+            _locationController.LoadFirstLocation();
+        }
+
+        public void Dispose()
+        {
+            _kidsController.AllKidsFound -= OnAllKidsFound;
+            _locationController.LocationLoaded -= OnLocationLoaded;
+        }
+
+        private void StartRound()
+        {
+            _kidsController.SpawnAndHideKids();
 
             _countdown = _kidsData.HideCountdown;
             _phase = Phase.Countdown;
@@ -36,7 +49,6 @@ namespace gishadev.gmtk.Core
             if (_phase != Phase.Countdown)
                 return;
 
-            // When countdown is over seeker (player) is seeking kids.
             _countdown -= Time.deltaTime;
             if (_countdown <= 0f)
             {
@@ -47,13 +59,20 @@ namespace gishadev.gmtk.Core
 
         private void OnAllKidsFound()
         {
-            _phase = Phase.Won;
-            Debug.Log("GameController: all kids found - round won!");
+            // More locations left -> arm the exit so the player can walk out; otherwise the game is won.
+            if (_locationController.HasNextLocation)
+            {
+                if (_locationController.CurrentLocation != null &&
+                    _locationController.CurrentLocation.ExitZone != null)
+                    _locationController.CurrentLocation.ExitZone.SetArmed(true);
+            }
+            else
+            {
+                _phase = Phase.Won;
+                Debug.Log("GameController: all locations cleared - game won!");
+            }
         }
 
-        public void Dispose()
-        {
-            _kidsController.AllKidsFound -= OnAllKidsFound;
-        }
+        private void OnLocationLoaded(Location location) => StartRound();
     }
 }

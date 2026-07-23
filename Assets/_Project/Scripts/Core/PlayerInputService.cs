@@ -82,6 +82,14 @@ namespace gishadev.gmtk.Core
             _customInput.Player.PreviousUsable.performed -= OnPreviousUsablePerformed;
         }
 
+        public void SetInputEnabled(bool enabled)
+        {
+            if (enabled)
+                _customInput.Player.Enable();
+            else
+                _customInput.Player.Disable();
+        }
+
         private void OnMovementPerformed(InputAction.CallbackContext obj) =>
             MovementPerformed?.Invoke(obj.ReadValue<Vector2>());
 

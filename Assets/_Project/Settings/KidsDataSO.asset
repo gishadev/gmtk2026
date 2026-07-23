@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: KidsDataSO
   m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidsDataSO
   <KidPrefab>k__BackingField: {fileID: -1519789333084249198, guid: 057fd64714af2e643b8eae45e9232357, type: 3}
-  <KidsCount>k__BackingField: 4
+  <KidsCount>k__BackingField: 10
   <HideCountdown>k__BackingField: 10
-  <FleeThreshold>k__BackingField: 1
   <DetectRadius>k__BackingField: 6
   <ViewHalfAngle>k__BackingField: 35
   <LineOfSightMask>k__BackingField:

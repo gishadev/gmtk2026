@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b289ed93dba3441b84b4d59639947b1b, type: 3}
+  m_Name: GameDataSO
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.Core.GameDataSO
+  <CharacterPrefab>k__BackingField: {fileID: 8518274837142395482, guid: 2d34ed76c0ca63447938b9c32d2452e7, type: 3}
+  <Locations>k__BackingField:
+  - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: 784085e3e472a47419cf20622a23b2d6, type: 3}
+    <FleeAmount>k__BackingField: 5
+  - <LocationPrefab>k__BackingField: {fileID: -2155122847335406176, guid: 7fc22e65af262fc45b48c552cdd9d87e, type: 3}
+    <FleeAmount>k__BackingField: 3
