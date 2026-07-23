@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VContainer;
 
@@ -12,8 +13,6 @@ namespace gishadev.gmtk.Core
         {
             _locationController.LocationLoaded += OnLocationLoaded;
 
-            // The first location loads from a VContainer entry point, before this Start runs,
-            // so its event was already dispatched. Scan the current one now to catch up.
             if (_locationController.CurrentLocation != null)
                 RescanGraph();
         }
@@ -22,13 +21,12 @@ namespace gishadev.gmtk.Core
 
         private void OnLocationLoaded(Location location) => RescanGraph();
 
-        private void RescanGraph()
+        private async void RescanGraph()
         {
+            await UniTask.Yield();
             if (AstarPath.active == null)
                 return;
 
-            // Flush the freshly instantiated location's colliders into the physics world,
-            // otherwise the scan runs before they exist and finds nothing.
             Physics.SyncTransforms();
             AstarPath.active.Scan();
         }
