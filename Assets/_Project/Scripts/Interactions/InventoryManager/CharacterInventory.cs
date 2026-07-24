@@ -1,3 +1,4 @@
+using gishadev.gmtk.Input;
 using gishadev.gmtk.Core;
 using gishadev.gmtk.Interactions.InventoryManager.InventorySystems;
 using gishadev.gmtk.Interactions.InventoryManager.Pickables;

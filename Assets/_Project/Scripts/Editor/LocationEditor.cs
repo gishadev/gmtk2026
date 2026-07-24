@@ -1,3 +1,4 @@
+using gishadev.gmtk.LocationManager;
 using gishadev.gmtk.Core;
 using UnityEditor;
 using UnityEngine;

@@ -1,4 +1,8 @@
 using System;
+using gishadev.gmtk.Input;
+using gishadev.gmtk.LocationManager;
+using Cysharp.Threading.Tasks;
+using gishadev.gmtk.Countdown;
 using gishadev.gmtk.kids;
 using UnityEngine;
 using VContainer;
@@ -6,28 +10,19 @@ using VContainer.Unity;
 
 namespace gishadev.gmtk.Core
 {
-    public class GameController : IGameController, IInitializable, ITickable, IDisposable
+    public class GameController : IGameController, IInitializable, IDisposable
     {
-        private enum Phase
-        {
-            Countdown,
-            Seeking,
-            Won
-        }
-
         [Inject] private IKidsController _kidsController;
         [Inject] private ILocationController _locationController;
-        [Inject] private KidsDataSO _kidsData;
-
-        private Phase _phase;
-        private float _countdown;
+        [Inject] private IPlayerInputService _playerInputService;
+        [Inject] private ICountdownController _countdownController;
 
         public void Initialize()
         {
             _kidsController.AllKidsFound += OnAllKidsFound;
             _locationController.LocationLoaded += OnLocationLoaded;
 
-            _locationController.LoadFirstLocation();
+            StartGameAsync().Forget();
         }
 
         public void Dispose()
@@ -36,25 +31,24 @@ namespace gishadev.gmtk.Core
             _locationController.LocationLoaded -= OnLocationLoaded;
         }
 
+        // Runs once at the start of the Game (not per round): locks the player out,
+        // runs the intro countdown, then hands control back.
+        private async UniTaskVoid StartGameAsync()
+        {
+            _playerInputService.SetInputEnabled(false);
+
+            _locationController.LoadFirstLocation();
+
+            await _countdownController.StartCountdown();
+
+            _playerInputService.SetInputEnabled(true);
+        }
+
         private void StartRound()
         {
             _kidsController.SpawnAndHideKids();
-
-            _countdown = _kidsData.HideCountdown;
-            _phase = Phase.Countdown;
-        }
-
-        public void Tick()
-        {
-            if (_phase != Phase.Countdown)
-                return;
-
-            _countdown -= Time.deltaTime;
-            if (_countdown <= 0f)
-            {
-                _phase = Phase.Seeking;
-                _kidsController.BeginSeeking();
-            }
+            // Kids are findable from the moment they spawn - no hide timer to wait out.
+            _kidsController.BeginSeeking();
         }
 
         private void OnAllKidsFound()
@@ -68,7 +62,6 @@ namespace gishadev.gmtk.Core
             }
             else
             {
-                _phase = Phase.Won;
                 Debug.Log("GameController: all locations cleared - game won!");
             }
         }

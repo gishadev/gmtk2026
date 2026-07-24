@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using gishadev.gmtk.LocationManager;
 using gishadev.gmtk.Core;
+using gishadev.walkingSimulator.EventsManager;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -11,7 +14,6 @@ namespace gishadev.gmtk.kids
 {
     public class KidsController : IInitializable, IDisposable, IKidsController
     {
-        public event Action<int> KidFound;
         public event Action AllKidsFound;
 
         public bool IsSeeking { get; private set; }
@@ -21,6 +23,7 @@ namespace gishadev.gmtk.kids
         private readonly IObjectResolver _objectResolver;
         private readonly KidsDataSO _kidsData;
         private readonly ILocationController _locationController;
+        private readonly IEventBus _eventBus;
 
         private readonly List<Kid> _kids = new();
         private readonly List<KidHidingSpot> _spots = new();
@@ -28,11 +31,12 @@ namespace gishadev.gmtk.kids
         private int _fledCount;
 
         public KidsController(IObjectResolver objectResolver, KidsDataSO kidsData,
-            ILocationController locationController)
+            ILocationController locationController, IEventBus eventBus)
         {
             _objectResolver = objectResolver;
             _kidsData = kidsData;
             _locationController = locationController;
+            _eventBus = eventBus;
         }
 
         public void Initialize()
@@ -87,7 +91,12 @@ namespace gishadev.gmtk.kids
             RemainingToFind = _kids.Count;
         }
 
-        public void BeginSeeking() => IsSeeking = true;
+        public async void BeginSeeking()
+        {
+            IsSeeking = true;
+            await UniTask.Yield();
+            _eventBus.Publish(new KidFoundEvent(RemainingToFind));
+        }
 
         public void NotifyKidFound(Kid kid)
         {
@@ -113,7 +122,7 @@ namespace gishadev.gmtk.kids
                 kid.MakeHappy();
             }
 
-            KidFound?.Invoke(RemainingToFind);
+            _eventBus.Publish(new KidFoundEvent(RemainingToFind));
 
             if (RemainingToFind <= 0)
                 AllKidsFound?.Invoke();

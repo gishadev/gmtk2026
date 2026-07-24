@@ -16,4 +16,14 @@ namespace gishadev.gmtk.Core
             IsInRadius = isInRadius;
         }
     }
+
+    public class KidFoundEvent : GameEvent
+    {
+        public int KidsToFindCount { get; private set; }
+
+        public KidFoundEvent(int kidsToFindCount)
+        {
+            KidsToFindCount = kidsToFindCount;
+        }
+    }
 }

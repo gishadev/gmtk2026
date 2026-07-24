@@ -21,6 +21,20 @@ namespace gishadev.walkingSimulator.UI
             canvasGroup.blocksRaycasts = black;
         }
 
+        /// <summary>Fade to black (raycast-blocking) and hold.</summary>
+        public Tween FadeIn()
+        {
+            canvasGroup.blocksRaycasts = true;
+            return Tween.Alpha(canvasGroup, 1f, fadeDuration);
+        }
+
+        /// <summary>Fade back to fully transparent and stop blocking raycasts.</summary>
+        public Tween FadeOut()
+        {
+            return Tween.Alpha(canvasGroup, 0f, fadeDuration)
+                .OnComplete(() => canvasGroup.blocksRaycasts = false);
+        }
+
         public Sequence FadeThrough(Action whileBlack, Action onComplete)
         {
             return Sequence.Create()

@@ -1,4 +1,5 @@
 using System;
+using gishadev.gmtk.LocationManager;
 using UnityEngine;
 
 namespace gishadev.gmtk.Core
