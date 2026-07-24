@@ -6,4 +6,14 @@ namespace gishadev.gmtk.Core
     public class LocationExitRequestedEvent : GameEvent
     {
     }
+
+    public class SeekRadiusWithKidChangedEvent : GameEvent
+    {
+        public bool IsInRadius { get; private set; }
+
+        public SeekRadiusWithKidChangedEvent(bool isInRadius)
+        {
+            IsInRadius = isInRadius;
+        }
+    }
 }

@@ -1,4 +1,6 @@
 using System.Linq;
+using gishadev.gmtk.Core;
+using gishadev.walkingSimulator.EventsManager;
 using UnityEngine;
 using VContainer;
 
@@ -12,8 +14,10 @@ namespace gishadev.gmtk.kids
     {
         [Inject] private IKidsController _kidsController;
         [Inject] private KidsDataSO _kidsData;
+        [Inject] private IEventBus _eventBus;
 
         private Camera _cam;
+        private bool _isKidInRadius;
 
         private void Awake()
         {
@@ -29,6 +33,8 @@ namespace gishadev.gmtk.kids
             var origin = camTransform.position;
             var forward = camTransform.forward;
 
+            var kidInRadius = false;
+
             // Snapshot: a found kid drops out of HidingKids immediately, but we may
             // find several this frame.
             foreach (var kid in _kidsController.HidingKids.ToArray())
@@ -41,6 +47,8 @@ namespace gishadev.gmtk.kids
                 if (distance > _kidsData.DetectRadius)
                     continue;
 
+                kidInRadius = true;
+
                 if (Vector3.Angle(forward, toKid) > _kidsData.ViewHalfAngle)
                     continue;
 
@@ -51,6 +59,21 @@ namespace gishadev.gmtk.kids
 
                 _kidsController.NotifyKidFound(kid);
             }
+
+            NotifySeekerRadius(kidInRadius);
+        }
+
+        /// <summary>
+        /// Publishes only on transitions: once with <c>true</c> when a kid first enters
+        /// the radius, once with <c>false</c> when the last one leaves it.
+        /// </summary>
+        private void NotifySeekerRadius(bool isInRadius)
+        {
+            if (isInRadius == _isKidInRadius)
+                return;
+
+            _isKidInRadius = isInRadius;
+            _eventBus.Publish(new SeekRadiusWithKidChangedEvent(isInRadius));
         }
     }
 }
