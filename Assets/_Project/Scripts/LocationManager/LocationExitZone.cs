@@ -1,3 +1,4 @@
+using System;
 using gishadev.gmtk.Core;
 using gishadev.walkingSimulator.EventsManager;
 using UnityEngine;
@@ -12,16 +13,25 @@ namespace gishadev.gmtk.LocationManager
     [RequireComponent(typeof(Collider))]
     public class LocationExitZone : MonoBehaviour
     {
+        [SerializeField] private GameObject arrowObject;
         [Inject] private IEventBus _eventBus;
 
         private bool _armed;
         private bool _fired;
 
+        private void Start()
+        {
+            arrowObject.SetActive(false);
+        }
+
         public void SetArmed(bool armed)
         {
             _armed = armed;
             if (armed)
+            {
+                arrowObject.SetActive(true);
                 _fired = false;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
