@@ -30,8 +30,8 @@ namespace gishadev.gmtk.Countdown
             _screenFader.FadeInInstant();
             _countdownGUI.Enable();
             await CountdownAsync(SECONDS_COUNTDOWN);
-            _countdownGUI.SetText("Find em all!");
-            await UniTask.WaitForSeconds(0.5f);
+            _countdownGUI.SetText("\"Where art thou?\" — Genesis 3:9");
+            await UniTask.WaitForSeconds(1.5f);
             _countdownGUI.Disable();
 
             await _screenFader.FadeOut();
