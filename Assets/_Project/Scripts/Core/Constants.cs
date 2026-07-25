@@ -8,5 +8,7 @@ namespace gishadev.gmtk.Core
         public const string MOVING_PLATFORM_TAG = "MovingPlatform";
         public static readonly int KID_STATE_ANIM = Animator.StringToHash("State");
         public static readonly int IS_RAISED_HAND_ANIM = Animator.StringToHash("IsRaisedHand");
+        public static readonly int IS_COUNTING_ANIM = Animator.StringToHash("IsCounting");
+
     }
 }
