@@ -7,6 +7,7 @@ namespace gishadev.gmtk.kids
     {
         [field: Header("Spawning")]
         [field: SerializeField] public Kid KidPrefab { get; private set; }
+        [field: SerializeField] public Adam AdamPrefab { get; private set; }
         [field: SerializeField] public int KidsCount { get; private set; } = 4;
 
         [field: Header("Round Flow")]

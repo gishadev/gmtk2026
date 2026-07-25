@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace gishadev.gmtk.kids
 {
-    [RequireComponent(typeof(Animator))]
     public class KidAnimationHandler : MonoBehaviour
     {
         private Kid _kid;
@@ -13,8 +12,8 @@ namespace gishadev.gmtk.kids
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-            _kid = GetComponentInParent<Kid>();
+            _animator = GetComponentInChildren<Animator>();
+            _kid = GetComponent<Kid>();
         }
 
         private void LateUpdate() => _animator.SetInteger(Constants.KID_STATE_ANIM, (int)GetKidAnimationState());
