@@ -29,6 +29,7 @@ namespace gishadev.gmtk.kids
         private readonly List<KidHidingSpot> _spots = new();
 
         private int _fledCount;
+        private bool _adamFled;
 
         public KidsController(IObjectResolver objectResolver, KidsDataSO kidsData,
             ILocationController locationController, IEventBus eventBus)
@@ -74,6 +75,7 @@ namespace gishadev.gmtk.kids
             var factory = new KidsFactory(_objectResolver, _kidsData);
 
             _fledCount = 0;
+            _adamFled = false;
 
             for (var i = 0; i < count; i++)
             {
@@ -82,7 +84,10 @@ namespace gishadev.gmtk.kids
                     break;
 
                 spot.Occupy();
-                var kid = factory.Create(spot.transform.position);
+                // Exactly one Adam is spawned; all other hiding spots are taken by regular kids.
+                var kid = i == 0
+                    ? factory.CreateAdam(spot.transform.position)
+                    : factory.Create(spot.transform.position);
                 kid.Escaped += OnKidEscaped;
                 kid.HideAt(spot);
                 _kids.Add(kid);
@@ -110,16 +115,25 @@ namespace gishadev.gmtk.kids
             var fleeAmount = _locationController.CurrentLocationData?.FleeAmount ?? 0;
             var nextLocation = GetNextLocationPOI();
 
-            if (_fledCount < fleeAmount && nextLocation != null)
+            if (nextLocation == null)
+                kid.MakeHappy();
+            else if (kid is Adam)
             {
-                // Still within this location's flee quota -> run to the next-location POI and disappear.
+                // Adam always flees; he can never be made happy.
                 _fledCount++;
+                _adamFled = true;
                 kid.FleeTo(nextLocation);
             }
             else
             {
-                // Flee quota met (or nowhere to flee) -> caught for good.
-                kid.MakeHappy();
+                var regularQuota = _adamFled ? fleeAmount : fleeAmount - 1;
+                if (_fledCount < regularQuota)
+                {
+                    _fledCount++;
+                    kid.FleeTo(nextLocation);
+                }
+                else
+                    kid.MakeHappy();
             }
 
             _eventBus.Publish(new KidFoundEvent(RemainingToFind));

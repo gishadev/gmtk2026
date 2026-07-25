@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5637306511307352144}
   - component: {fileID: 7182021374680220704}
   - component: {fileID: -6452853335111197359}
+  - component: {fileID: 3481199837738348631}
   m_Layer: 0
   m_Name: Adam
   m_TagString: Untagged
@@ -105,7 +106,7 @@ MonoBehaviour:
   movement:
     follower:
       rotationSpeed: 600
-      speed: 7
+      speed: 7.5
       maxRotationSpeed: 720
       maxOnSpotRotationSpeed: 720
       slowdownTime: 0.5
@@ -113,7 +114,7 @@ MonoBehaviour:
       desiredWallDistance: 0.5
       leadInRadiusWhenApproachingDestination: 1
       allowRotatingOnSpotBacking: 1
-    debugFlags: 64
+    debugFlags: 0
     stopDistance: 0.2
     rotationSmoothing: 0
     positionSmoothing: 0
@@ -240,6 +241,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b76d5b6a384037bb16be3086b6f9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.Adam
+--- !u!114 &3481199837738348631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357427211917894228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc99730ec754857af3442b3845c7aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidAnimationHandler
 --- !u!1001 &6291911687969412643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,30 +316,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f095b03deed2f8b48937a862b71a7799, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8649069781210433366}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f095b03deed2f8b48937a862b71a7799, type: 3}
 --- !u!4 &5826502491641409992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f095b03deed2f8b48937a862b71a7799, type: 3}
   m_PrefabInstance: {fileID: 6291911687969412643}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6597832320844475250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f095b03deed2f8b48937a862b71a7799, type: 3}
-  m_PrefabInstance: {fileID: 6291911687969412643}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8649069781210433366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6597832320844475250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc99730ec754857af3442b3845c7aec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidAnimationHandler

@@ -22,5 +22,10 @@ namespace gishadev.gmtk.kids
         {
             return _objectResolver.Instantiate(_kidsData.KidPrefab, position, Quaternion.identity);
         }
+
+        public Adam CreateAdam(Vector3 position)
+        {
+            return _objectResolver.Instantiate(_kidsData.AdamPrefab, position, Quaternion.identity);
+        }
     }
 }
