@@ -50,6 +50,8 @@ MonoBehaviour:
   autoInjectGameObjects: []
   autoInjectScene: 1
   includeInactive: 1
+  audioMasterSO: {fileID: 11400000, guid: 89be76cb8916b2940b5d728150ffa3b1, type: 2}
+  poolDataSO: {fileID: 11400000, guid: a93663ee763cd604fb1146c3be5b5196, type: 2}
   characterMovementDataSO: {fileID: 11400000, guid: 878bc3d8b975b6d4498a2613e67eb6eb, type: 2}
   characterInteractionDataSO: {fileID: 11400000, guid: 1552dc0fb5cbf144f8e2389da8159a55, type: 2}
   gameUIDataSO: {fileID: 11400000, guid: c70d91ca81fc40e4bb2682509baeeffd, type: 2}

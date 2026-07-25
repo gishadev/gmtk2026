@@ -14,5 +14,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: polish-tools::gishadev.tools.Audio.AudioMasterSO
   <FadeTransitionTime>k__BackingField: 0
   <MusicAutoSequencing>k__BackingField: 0
-  <MusicCollection>k__BackingField: []
-  <SFXCollection>k__BackingField: []
+  <MusicCollection>k__BackingField:
+  - <Name>k__BackingField: rain_ambient
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: ac7dcb5613c9f474582cf26f5eca115b, type: 3}
+    <InitialVolume>k__BackingField: 0.05
+    <Pitch>k__BackingField: 1
+    <IsLooping>k__BackingField: 1
+    <IsFade>k__BackingField: 1
+  - <Name>k__BackingField: church_ambient
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: f995eb488ba212d41a49bd47072f3ad3, type: 3}
+    <InitialVolume>k__BackingField: 0.05
+    <Pitch>k__BackingField: 1
+    <IsLooping>k__BackingField: 1
+    <IsFade>k__BackingField: 1
+  <SFXCollection>k__BackingField:
+  - <Name>k__BackingField: countdown
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 00a0120b9d812eb46ba9ddb90d06225d, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 0.5
+  - <Name>k__BackingField: i_will_meet_him
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 8b052fb1b6af07742a7ef91ffa053f89, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+  - <Name>k__BackingField: jesus_loves_you
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: bb90fb4251639954882f3c9b6b540082, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+  - <Name>k__BackingField: ominous
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: fb5ddb49be2641e4e9935df5ade712eb, type: 3}
+    - {fileID: 8300000, guid: 1e8099fb6b5a113428554be6a2661f14, type: 3}
+    - {fileID: 8300000, guid: cf55a46d53762c34e84459b7e1a5224c, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+  - <Name>k__BackingField: stinger_high
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: f1e4f07c97315304c8d9802c58a77056, type: 3}
+    - {fileID: 8300000, guid: 865e8e72ba2c8144aae10994d7062fac, type: 3}
+    - {fileID: 8300000, guid: 64e5c3043cd2bdd4381b3ed16e397a4f, type: 3}
+    - {fileID: 8300000, guid: de65781acac378340be279d78fcbac84, type: 3}
+    - {fileID: 8300000, guid: d4a299cefd802594fa71c9727de7a25e, type: 3}
+    - {fileID: 8300000, guid: 4326b80fd25ea8f42b924d9918e4d17b, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+  - <Name>k__BackingField: stinger_low
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 607bcd718af4bc24f8153ca516b76df7, type: 3}
+    - {fileID: 8300000, guid: 7f0bbc0ed7863d148bbf85276a383d91, type: 3}
+    - {fileID: 8300000, guid: 6c9fe50fda12a4748a07e6e6fae11f2c, type: 3}
+    - {fileID: 8300000, guid: c519da30e96c12b43883a6c9d1a21941, type: 3}
+    - {fileID: 8300000, guid: be84287c7d2f2d840b0fe7779d03520f, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1

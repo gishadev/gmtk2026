@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7182021374680220704}
   - component: {fileID: -1519789333084249198}
   - component: {fileID: 387634083829422388}
+  - component: {fileID: 427150870061316426}
   m_Layer: 0
   m_Name: Kid w Hood
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   movement:
     follower:
       rotationSpeed: 600
-      speed: 7.5
+      speed: 9
       maxRotationSpeed: 720
       maxOnSpotRotationSpeed: 720
       slowdownTime: 0.5
@@ -253,6 +254,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc99730ec754857af3442b3845c7aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidAnimationHandler
+--- !u!114 &427150870061316426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357427211917894228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4f50fcc03d40b188cfa2ad538590de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.MovementManager.StepSfxHandler
+  stepDistance: 2
+  ignoreVertical: 1
 --- !u!1001 &1689960415072512764
 PrefabInstance:
   m_ObjectHideFlags: 0

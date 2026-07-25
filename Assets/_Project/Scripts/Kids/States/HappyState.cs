@@ -19,6 +19,7 @@ namespace gishadev.gmtk.kids.States
 
         public void OnEnter()
         {
+            _kid.PlayHappy();
             _kid.Stop();
 
             var topPosition = _kid.transform.position + Vector3.up * 20f;

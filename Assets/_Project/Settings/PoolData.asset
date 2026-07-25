@@ -12,6 +12,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3c086602934c239c49eff6acf5e3b9, type: 3}
   m_Name: PoolData
   m_EditorClassIdentifier: polish-tools::gishadev.tools.Pooling.PoolDataSO
-  <SFXPoolObjects>k__BackingField: []
+  <SFXPoolObjects>k__BackingField:
+  - <Name>k__BackingField: taunt
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 2ce38a23772a05b45b8dbfec400eae7c, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: a801e91088005394f906256238b83ef3, type: 3}
+    - {fileID: 8300000, guid: a6c70c990ae2a3b4cad0eba0709cbd3d, type: 3}
+    - {fileID: 8300000, guid: 4ba388adaf0124c44b34f299b2100178, type: 3}
+    - {fileID: 8300000, guid: 59dd100b8e0562849aa6fdda2632aa95, type: 3}
+    - {fileID: 8300000, guid: 250d381fa3773b94d900b2ddfb13a69c, type: 3}
+    - {fileID: 8300000, guid: c8f8bcc2d7c152d4387be47b5c49ce80, type: 3}
+    - {fileID: 8300000, guid: b9f4d47bc19bb67499468332b9bf02d8, type: 3}
+    - {fileID: 8300000, guid: ffd1a82bb340f864d9fc6ad48c2cf93a, type: 3}
+    - {fileID: 8300000, guid: 9c25627e0da26014a815e3181ad475f0, type: 3}
+    - {fileID: 8300000, guid: aace0e49244f5254b9268622819618f0, type: 3}
+  - <Name>k__BackingField: step_soft
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 611bed470ea67aa45a2f9ee2ce49376f, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 6358e4b5547688d498bb8057ec511ad5, type: 3}
+    - {fileID: 8300000, guid: 8cf182a3b14258443bc48eda4225fee1, type: 3}
+    - {fileID: 8300000, guid: cc6996f48f000d948a54888b22403ce1, type: 3}
+    - {fileID: 8300000, guid: 9e525773ba340874c8ee3c031c7409b3, type: 3}
+    - {fileID: 8300000, guid: 5b888c0d851f1f543b2ae2396643011e, type: 3}
+    - {fileID: 8300000, guid: e3387a1c4d75d6b42bae48ebffdbfc28, type: 3}
+  - <Name>k__BackingField: step_hard
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 611bed470ea67aa45a2f9ee2ce49376f, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 7dcf19fa4f968fa40ae81361cd82cb63, type: 3}
+    - {fileID: 8300000, guid: a956c12ea8deb5e4890d8481e6627417, type: 3}
+    - {fileID: 8300000, guid: f03e5f3350ef85048b887714c86526d9, type: 3}
+    - {fileID: 8300000, guid: a74cecb0f38d593408af605d7a250b13, type: 3}
+    - {fileID: 8300000, guid: 7e2f2870902c9054c98fb676085ca870, type: 3}
+    - {fileID: 8300000, guid: 8098c7fa6145fa94486ae7bd30f4ae93, type: 3}
+    - {fileID: 8300000, guid: b8ffeb1d8c547cd40be54aad6d4dcc07, type: 3}
+  - <Name>k__BackingField: crying
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 611bed470ea67aa45a2f9ee2ce49376f, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 752b7f48d3417324ab07296c840c4d44, type: 3}
+    - {fileID: 8300000, guid: 381862c1061b7f64cbe1aeeab91f00ca, type: 3}
+    - {fileID: 8300000, guid: 36c961340e30b6f4fb17fbd38f5999f4, type: 3}
+  - <Name>k__BackingField: bells
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 2ce38a23772a05b45b8dbfec400eae7c, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 844e8bb8622aa3f41a9bbb5c48b979da, type: 3}
+    - {fileID: 8300000, guid: 82824cbedeedbe54f9d26247dcc64135, type: 3}
+    - {fileID: 8300000, guid: 6293ca61af85cf3499e411dd11ecb7d0, type: 3}
+    - {fileID: 8300000, guid: fde86f096044bc145a5e8ede700848d0, type: 3}
+    - {fileID: 8300000, guid: 027d3504dbe2378479c785955de2ec14, type: 3}
+    - {fileID: 8300000, guid: 346657ef66179904b95e8d29b5ece408, type: 3}
+  - <Name>k__BackingField: shortscream
+    <Prefabs>k__BackingField:
+    - {fileID: 4180699274365818848, guid: 2ce38a23772a05b45b8dbfec400eae7c, type: 3}
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: ff06479d90c28a546b374aeadea38fc0, type: 3}
+    - {fileID: 8300000, guid: 459505fed7379164cacc93b0d06b71bb, type: 3}
+    - {fileID: 8300000, guid: 669800a0222bd82449da54781cb156b8, type: 3}
   <VFXPoolObjects>k__BackingField: []
   <OtherPoolObjects>k__BackingField: []

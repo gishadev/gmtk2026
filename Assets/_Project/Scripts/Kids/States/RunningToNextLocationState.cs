@@ -19,6 +19,7 @@ namespace gishadev.gmtk.kids.States
 
         public void OnEnter()
         {
+            _kid.PlayShortScream();
             _kid.OnEnteredRunning();
             _kid.MoveToPOI(_kid.AssignedSpot);
         }

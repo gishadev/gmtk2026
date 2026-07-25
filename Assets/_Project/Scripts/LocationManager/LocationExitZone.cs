@@ -1,5 +1,6 @@
 using System;
 using gishadev.gmtk.Core;
+using gishadev.tools.Audio;
 using gishadev.walkingSimulator.EventsManager;
 using UnityEngine;
 using VContainer;
@@ -15,7 +16,8 @@ namespace gishadev.gmtk.LocationManager
     {
         [SerializeField] private GameObject arrowObject;
         [Inject] private IEventBus _eventBus;
-
+        [Inject] private IAudioManager _audioManager;
+        
         private bool _armed;
         private bool _fired;
 
@@ -44,6 +46,7 @@ namespace gishadev.gmtk.LocationManager
 
             _fired = true;
             _eventBus.Publish(new LocationExitRequestedEvent());
+            _audioManager.PlaySFX(SFXAudioEnum.OMINOUS);
         }
     }
 }

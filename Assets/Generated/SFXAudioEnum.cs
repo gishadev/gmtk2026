@@ -1,4 +1,9 @@
-
 public enum SFXAudioEnum
 {
+	COUNTDOWN,
+	I_WILL_MEET_HIM,
+	JESUS_LOVES_YOU,
+	OMINOUS,
+	STINGER_HIGH,
+	STINGER_LOW
 }

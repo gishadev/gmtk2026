@@ -1,5 +1,6 @@
 using System.Globalization;
 using Cysharp.Threading.Tasks;
+using gishadev.tools.Audio;
 using gishadev.walkingSimulator.UI;
 using VContainer;
 using VContainer.Unity;
@@ -10,7 +11,8 @@ namespace gishadev.gmtk.Countdown
     public class CountdownController : IInitializable, ICountdownController
     {
         [Inject] private IScreenFader _screenFader;
-
+        [Inject] private IAudioManager _audioManager;
+        
         private const float SECONDS_COUNTDOWN = 5;
         
         private CountdownGUIHandler _countdownGUI;
@@ -28,6 +30,7 @@ namespace gishadev.gmtk.Countdown
         public async UniTask StartCountdown()
         {
             _screenFader.FadeInInstant();
+            _audioManager.PlaySFX(SFXAudioEnum.COUNTDOWN);
             _countdownGUI.Enable();
             await CountdownAsync(SECONDS_COUNTDOWN);
             _countdownGUI.SetText("\"Where art thou?\" — Genesis 3:9");

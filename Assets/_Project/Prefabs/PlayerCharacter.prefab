@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1695761255315327213}
   - component: {fileID: 6675920477530232700}
   - component: {fileID: 6932374206964198682}
+  - component: {fileID: 2312826566358835092}
   m_Layer: 7
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -321,6 +322,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a2fbc70eed602478564c7c9502651d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: gmtk::gishadev.gmtk.Core.PlayerCharacter
+--- !u!114 &2312826566358835092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518274837142395482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4f50fcc03d40b188cfa2ad538590de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.gmtk.MovementManager.StepSfxHandler
+  stepDistance: 2
+  ignoreVertical: 1
 --- !u!1 &8518274838045187104
 GameObject:
   m_ObjectHideFlags: 0

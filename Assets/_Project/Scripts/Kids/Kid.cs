@@ -1,8 +1,10 @@
 using System;
 using gishadev.gmtk.kids.States;
+using gishadev.tools.Effects;
 using gishadev.tools.StateMachine;
 using Pathfinding;
 using UnityEngine;
+using VContainer;
 
 namespace gishadev.gmtk.kids
 {
@@ -20,6 +22,12 @@ namespace gishadev.gmtk.kids
         public bool IsFindable => IsHiding && !_fleeRequested && !_happyRequested;
 
         public IState CurrentState => _stateMachine.CurrentState;
+
+        /// <summary>Randomized delay range (seconds) between taunts while hiding.</summary>
+        public Vector2 TauntDelayRange => _kidsData.TauntDelayRange;
+
+        [Inject] private ISFXEmitter _sfxEmitter;
+        [Inject] private KidsDataSO _kidsData;
 
         private StateMachine _stateMachine;
         private FollowerEntity _followerEntity;
@@ -82,6 +90,11 @@ namespace gishadev.gmtk.kids
 
         public void MoveToPOI(IPOI poi) => _followerEntity.destination = poi.transform.position;
         public void Stop() => _followerEntity.destination = transform.position;
+
+        /// <summary>Emits a SFX at the kid's current position.</summary>
+        public void PlayTaunt() => _sfxEmitter.EmitAt(SoundEffectsEnum.TAUNT, transform.position, Quaternion.identity);
+        public void PlayHappy() => _sfxEmitter.EmitAt(SoundEffectsEnum.BELLS, transform.position, Quaternion.identity);
+        public void PlayShortScream() => _sfxEmitter.EmitAt(SoundEffectsEnum.SHORTSCREAM, transform.position, Quaternion.identity);
 
         public void OnEnteredHiding() => _hideRequested = _fleeRequested = _happyRequested = false;
         public void OnEnteredRunning() => _fleeRequested = false;

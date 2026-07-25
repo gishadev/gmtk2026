@@ -14,6 +14,10 @@ namespace gishadev.gmtk.kids
         [field: Tooltip("Seconds the seeker must wait before hunting begins.")]
         [field: SerializeField] public float HideCountdown { get; private set; } = 10f;
 
+        [field: Header("Taunting")]
+        [field: Tooltip("Min/max seconds between taunts while a kid is hiding. Randomized each time so taunts rarely overlap.")]
+        [field: SerializeField] public Vector2 TauntDelayRange { get; private set; } = new(3f, 7f);
+
         [field: Header("Seeker Detection")]
         [field: Tooltip("Max distance at which the seeker can spot a hiding kid.")]
         [field: SerializeField] public float DetectRadius { get; private set; } = 6f;
