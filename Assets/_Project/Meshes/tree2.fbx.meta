@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e8973450d65bad41835d1cd1274596f
+guid: 529f4285267619f4db4e81d97578115f
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: houaemat
-    second: {fileID: 2100000, guid: a1ed69f861f1da04bb285297dff2d786, type: 2}
+      name: TT_checker_512x512_UV_GRID
+    second: {fileID: 2100000, guid: d8f0be8916eaa1044907741800305ea4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -97,7 +97,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

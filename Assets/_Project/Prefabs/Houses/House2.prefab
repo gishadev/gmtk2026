@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2185005420599865435, guid: 09530b2de663f484c97aad58bed90951, type: 3}
       propertyPath: m_Name
-      value: House1 (1) Variant
+      value: House2
       objectReference: {fileID: 0}
     - target: {fileID: 2783668973981753906, guid: 09530b2de663f484c97aad58bed90951, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3598040942524500199, guid: 09530b2de663f484c97aad58bed90951, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
+    - target: {fileID: 3714963142444670798, guid: 09530b2de663f484c97aad58bed90951, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
     - target: {fileID: 3919246308007569139, guid: 09530b2de663f484c97aad58bed90951, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -64,7 +72,15 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
+    - target: {fileID: 4725688664212934382, guid: 09530b2de663f484c97aad58bed90951, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
     - target: {fileID: 4773560123795303561, guid: 09530b2de663f484c97aad58bed90951, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
+    - target: {fileID: 5808132997091125940, guid: 09530b2de663f484c97aad58bed90951, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c584f04409988945a680a96cdb56fd0, type: 2}
