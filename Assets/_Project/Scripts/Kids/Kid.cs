@@ -12,7 +12,7 @@ namespace gishadev.gmtk.kids
         /// <summary>Raised once the kid reaches its next-location POI and leaves the game.</summary>
         public event Action<Kid> Escaped;
 
-        public bool ReachedDestination => _followerEntity.reachedDestination;
+        public bool ReachedDestination => _followerEntity.remainingDistance < 1f;
         public IPOI AssignedSpot { get; private set; }
         public bool IsHiding => _stateMachine != null && _stateMachine.CurrentState is HidingState;
 
@@ -80,11 +80,9 @@ namespace gishadev.gmtk.kids
             _happyRequested = true;
         }
 
-        // --- Movement ---
         public void MoveToPOI(IPOI poi) => _followerEntity.destination = poi.transform.position;
         public void Stop() => _followerEntity.destination = transform.position;
 
-        // --- Called by states ---
         public void OnEnteredHiding() => _hideRequested = _fleeRequested = _happyRequested = false;
         public void OnEnteredRunning() => _fleeRequested = false;
 

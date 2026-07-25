@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using gishadev.gmtk.Input;
-using gishadev.gmtk.Core;
 using gishadev.gmtk.MovementManager.Contexts;
 using gishadev.gmtk.MovementManager.Modules;
 using gishadev.gmtk.MovementManager.Modules.Kinematic;
