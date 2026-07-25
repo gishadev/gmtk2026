@@ -13,14 +13,14 @@ namespace gishadev.gmtk.kids.States
 
         public void Tick()
         {
-            if (_kid.AI.ReachedDestination)
+            if (_kid.ReachedDestination)
                 _kid.Escape();
         }
 
         public void OnEnter()
         {
             _kid.OnEnteredRunning();
-            _kid.AI.MoveToPOI(_kid.AssignedSpot);
+            _kid.MoveToPOI(_kid.AssignedSpot);
         }
 
         public void OnExit()

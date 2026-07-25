@@ -18,7 +18,7 @@ namespace gishadev.gmtk.kids.States
         public void OnEnter()
         {
             _kid.OnEnteredHiding();
-            _kid.AI.MoveToPOI(_kid.AssignedSpot);
+            _kid.MoveToPOI(_kid.AssignedSpot);
         }
 
         public void OnExit()

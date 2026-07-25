@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4985539889049324269}
   - component: {fileID: 5637306511307352144}
   - component: {fileID: 7182021374680220704}
-  - component: {fileID: 1292511949160627338}
   - component: {fileID: -1519789333084249198}
   m_Layer: 0
   m_Name: Kid
@@ -229,18 +228,6 @@ MonoBehaviour:
   movementPlaneSourceBacking: 0
   syncPosition: 1
   syncRotation: 1
---- !u!114 &1292511949160627338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5357427211917894228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bdc465ab1840da8135acb75f61f5b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: gmtk::gishadev.gmtk.kids.KidAI
 --- !u!114 &-1519789333084249198
 MonoBehaviour:
   m_ObjectHideFlags: 0

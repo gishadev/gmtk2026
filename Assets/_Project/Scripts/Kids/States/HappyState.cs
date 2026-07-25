@@ -1,4 +1,6 @@
 using gishadev.tools.StateMachine;
+using PrimeTween;
+using UnityEngine;
 
 namespace gishadev.gmtk.kids.States
 {
@@ -17,7 +19,11 @@ namespace gishadev.gmtk.kids.States
 
         public void OnEnter()
         {
-            _kid.AI.Stop();
+            _kid.Stop();
+
+            var topPosition = _kid.transform.position + Vector3.up * 20f;
+            var tween = Tween.Position(_kid.transform, topPosition, 15f);
+            tween.OnComplete(() => Object.Destroy(_kid.gameObject));
         }
 
         public void OnExit()

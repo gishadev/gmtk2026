@@ -1,17 +1,18 @@
 using System;
 using gishadev.gmtk.kids.States;
 using gishadev.tools.StateMachine;
+using Pathfinding;
 using UnityEngine;
 
 namespace gishadev.gmtk.kids
 {
-    [RequireComponent(typeof(KidAI))]
+    [RequireComponent(typeof(FollowerEntity))]
     public class Kid : MonoBehaviour
     {
         /// <summary>Raised once the kid reaches its next-location POI and leaves the game.</summary>
         public event Action<Kid> Escaped;
 
-        public KidAI AI { get; private set; }
+        public bool ReachedDestination => _followerEntity.reachedDestination;
         public IPOI AssignedSpot { get; private set; }
         public bool IsHiding => _stateMachine != null && _stateMachine.CurrentState is HidingState;
 
@@ -19,8 +20,9 @@ namespace gishadev.gmtk.kids
         public bool IsFindable => IsHiding && !_fleeRequested && !_happyRequested;
 
         public IState CurrentState => _stateMachine.CurrentState;
-        
+
         private StateMachine _stateMachine;
+        private FollowerEntity _followerEntity;
 
         private bool _hideRequested;
         private bool _fleeRequested;
@@ -29,7 +31,7 @@ namespace gishadev.gmtk.kids
 
         private void Awake()
         {
-            AI = GetComponent<KidAI>();
+            _followerEntity = GetComponent<FollowerEntity>();
         }
 
         private void Start()
@@ -77,6 +79,10 @@ namespace gishadev.gmtk.kids
         {
             _happyRequested = true;
         }
+
+        // --- Movement ---
+        public void MoveToPOI(IPOI poi) => _followerEntity.destination = poi.transform.position;
+        public void Stop() => _followerEntity.destination = transform.position;
 
         // --- Called by states ---
         public void OnEnteredHiding() => _hideRequested = _fleeRequested = _happyRequested = false;

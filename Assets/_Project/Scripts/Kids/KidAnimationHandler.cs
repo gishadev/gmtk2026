@@ -26,7 +26,7 @@ namespace gishadev.gmtk.kids
                 case IdleState:
                     return KidAnimationState.Idle;
                 case HappyState:
-                    return KidAnimationState.Idle;
+                    return KidAnimationState.Happy;
                 case HidingState:
                     return KidAnimationState.Crouch;
                 case RunningToNextLocationState:
@@ -42,6 +42,7 @@ namespace gishadev.gmtk.kids
         Idle = 0,
         Crouch = 1,
         Walk = 2,
-        Run = 3
+        Run = 3,
+        Happy = 4
     }
 }
