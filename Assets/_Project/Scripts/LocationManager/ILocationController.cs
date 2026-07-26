@@ -8,6 +8,9 @@ namespace gishadev.gmtk.LocationManager
         /// <summary>Config for the location the game is currently on (null before the first load).</summary>
         LocationData CurrentLocationData { get; }
 
+        /// <summary>Config for the location the game came from (null while on the first location).</summary>
+        LocationData PreviousLocationData { get; }
+
         /// <summary>The spawned instance of the current location (null until actually spawned).</summary>
         Location CurrentLocation { get; }
 

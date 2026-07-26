@@ -10,6 +10,9 @@ namespace gishadev.gmtk.LocationManager
         public LocationData CurrentLocationData =>
             IsValidIndex(_currentIndex) ? _gameData.Locations[_currentIndex] : null;
 
+        public LocationData PreviousLocationData =>
+            IsValidIndex(_currentIndex - 1) ? _gameData.Locations[_currentIndex - 1] : null;
+
         public Location CurrentLocation { get; private set; }
         public bool HasNextLocation => IsValidIndex(_currentIndex + 1);
 

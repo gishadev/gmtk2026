@@ -65,10 +65,15 @@ namespace gishadev.gmtk.kids
             if (location.HidingSpots != null)
                 _spots.AddRange(location.HidingSpots);
 
-            var count = Mathf.Min(_kidsData.KidsCount, _spots.Count);
-            if (count < _kidsData.KidsCount)
+            // First location uses the configured starting count; every location after that
+            // starts with as many kids as fled into it from the previous one (its FleeAmount).
+            var previousLocation = _locationController.PreviousLocationData;
+            var startCount = previousLocation != null ? previousLocation.FleeAmount : _kidsData.KidsCount;
+
+            var count = Mathf.Min(startCount, _spots.Count);
+            if (count < startCount)
                 Debug.LogWarning(
-                    $"KidsController: requested {_kidsData.KidsCount} kids but only {_spots.Count} hiding spots exist. Spawning {count}.");
+                    $"KidsController: requested {startCount} kids but only {_spots.Count} hiding spots exist. Spawning {count}.");
 
             var factory = new KidsFactory(_objectResolver, _kidsData);
 
