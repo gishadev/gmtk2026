@@ -10,10 +10,14 @@ namespace gishadev.gmtk.Intro
     public class IntroSequenceController : MonoBehaviour
     {
         [SerializeField] private VideoPlayer videoPlayer;
+        [SerializeField] private string videoFileName = "intro.mp4";
 
         private bool _transitioned;
 
         private void Reset() => videoPlayer = GetComponent<VideoPlayer>();
+
+        private void Awake() =>
+            videoPlayer.url = $"{Application.streamingAssetsPath}/{videoFileName}";
         private void OnEnable() => videoPlayer.loopPointReached += OnVideoFinished;
         private void OnDisable() => videoPlayer.loopPointReached -= OnVideoFinished;
         private void OnVideoFinished(VideoPlayer source) => GoToNextScene();
