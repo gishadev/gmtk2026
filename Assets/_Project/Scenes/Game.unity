@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 6470408}
   - component: {fileID: 6470410}
   m_Layer: 5
-  m_Name: KidsCount Label
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <wiggle> > Form faith in kids
+  m_text: '<wiggle>> Form faith in kids
+
+    > Initiate Adam'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 147b1ac507b3c5947b27599b774364a3, type: 2}
   m_sharedMaterial: {fileID: -6489599372725255378, guid: 147b1ac507b3c5947b27599b774364a3, type: 2}
@@ -531,6 +533,7 @@ GameObject:
   - component: {fileID: 104917418}
   - component: {fileID: 104917417}
   - component: {fileID: 104917420}
+  - component: {fileID: 104917421}
   m_Layer: 5
   m_Name: HUDGUI
   m_TagString: Untagged
@@ -618,6 +621,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: gmtk::gishadev.walkingSimulator.UI.HUDGUIHandler
   childCountTMP: {fileID: 1509042903}
+--- !u!114 &104917421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104917413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d398b6147f487ba906dedd4e9bd938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: gmtk::gishadev.walkingSimulator.UI.TooltipHandler
+  label: {fileID: 6470408}
+  defaultText: '<wiggle>> Form faith in kids
+
+    > Initiate Adam'
+  foundText: <wiggle>> Follow the green way
 --- !u!1 &185823325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: AstarPathfindingProject::AstarPath
   version: 1073741824
   data:
-    dataString: UEsDBBQAAAgIAAAIIeygnByfYAIAAO4EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1T2zAQ/SsZn1smTmJCemxC6YFAJ85MGTo9bOS1rYkspZKcEBj+O7uyYwyUk8bv7Vvtx5OfIlGCBeHRriCTtYu+DYZnyZdBJIz2prZLeLi01ljCR4yiUql8xBA24rgDqC1sFP5EWZS+DTuBcyWrTZeygodUmR2Lx8Pm+zIr8Bp14UtWBlDqFRbS6PaaMWGYSW/sWipswXh0QbBvgbsPyH2H1A5Zx315WyMhO7TXcES7NJnMpQBPdzH9529DrtFakPrzmExWqB0hxHIx0eIEjBcR8RsQ28KaWmdrC3u0DjZSSX/k0N/tYDjOosI9aH9lYVemtc1BYJfS3Bi/wn+1tCFWGKVQcBkpei91wdU89eCTMJTtWLIrj04KlwrUzOhaqXfoaPGKq9AuuC3nHUR7UDWrzieDZ54rFC0XJmDBkWFoznO6X2Z8YTfejluiK8Pcc1DuDdNO+D+atcX+qnwT2Firgt3CHLSDaqdoAD/ItMGW43Y8XMfqlGiBHqRiFxBr9LyZU1cSN819WePDbpumH9iphB7b85HP0H9urMDsO+/UzVHTHR8V8Vkym8xms3H8qbR1byuMk046PRvFw+HwpCQmaF1pDlzzbe2pZezNkpkbWvncaN0YwL1jWdeaqsdoBIvOp3SI8lar4919j0XN3ryBfUXieR2M9rqNopbZW3dEkyRPkljEUwHniRjh14tJcpHQy8un00zE2TQKfUgtvQT1i/Irf5ou/Qh6FtBQhYwrFLTDQXgT7OLMwuFKPlamZwupc5MKsoq+bXJ0fdPuQdGQs8vwx+i9lejpOXp+AVBLAwQUAAAICAAACCHsBdxcum4AAAB5AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDVM9Ez01FQSi9KLMgoBgoYgjilmSkgdrSSiWmaqalhsqF5cqKZabJRqq6FiamFqaGRRZq5eUqyYYq5UixQfUllQapfYm4qRE9AYklGWmZeSmZeul5QanJicYk7yHCl2FoAUEsBAi0AFAAACAgAAAgh7KCcHJ9gAgAA7gQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7AXcXLpuAAAAeQAAAAkAJAAAAAAAAAAAAAAArQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABmAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIexOgXHWXgIAAOoEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMz20GAw6hx0KaHkLSwcw0k04Pi7y2NcgSlWQIYfLfuysb10mak8bv7Vvtx5NPkSjBgvBoV5DJ2kVfBsOL5NMgEkZ7U9slPF1bayzhE0ZRqVQ+YwgbcdwB1BY2Cr+jLEpP+KgHzpWsNl3KCp5SZXYsHg+b7+uswFvUhS9ZGUCpV1hIo9trxoRhJr2xa6mwBePRFcG+BR7eIY8dUjtkHfflbY2E7NDewhHt0mQylwI83cX0r98NuUZrQeqPYzJZoXaEEMvFRIszMF5ExG9AbAtrap2tLezROthIJf2RQ3+2g+E4iwr3oP2NhV2Z1jYHgV1Kc2f8Cv/U0oZYYZRCwWWk6L3UBVdz6sFnYSjbsWRXHp0ULhWomTm9vMFGizOqQqvgtgwMoj2omhWXkwGzHoqWC91bcGQWmvGc7pYZX9aNtuOW6Mow8xyUe8W00/2PZm2xvybfBDa2qmC3MAftoNopav4bGTZYctyOhutYnRMt0INU7ABijZ43M+pK0rVS3Jc1Puy1afqJXUrosT2f+Qz958YKzL7yPt0cNd3xXhFfJLPJbDYbxx9KW+e2wjjppNOLUTwcDs9KYoLWlebANd/XnlrG3iyZuaN1z43WzfLdG5Z1raF6jEaw6HxKhyjvtTo+PPZY1OzLO9hXJJ7XwWT/tlHUMnvtjmiS5EkSi3gq4DIRI/x8NUmuEnp1+XSaiTibRqEPqaWXoH5QfuXP06WfQM8CGqqQcYWCdjgI74EdnFk43MjnyvRsIXVuUkFW0fdNjq5v2j0oGnJ2Hf4WvXcSnV6il79QSwMEFAAACAgAAAgh7AXcXLpuAAAAeQAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw1TPRM9NRUEovSizIKAYKGII4pZkpIHa0kolpmqmpYbKheXKimWmyUaquhYmphamhkUWauXlKsmGKuVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrpeUGpyYnGJO8hwpdhaAFBLAQItABQAAAgIAAAIIexOgXHWXgIAAOoEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIewF3Fy6bgAAAHkAAAAJACQAAAAAAAAAAAAAAKsCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZAMAAAAA
     file_cachedStartup: {fileID: 4900000, guid: 29c76f16c70f5294495e86808a5b1021, type: 3}
     cacheStartup: 0
   showNavGraphs: 1
@@ -2023,7 +2043,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6470407}
-  - {fileID: 2076624152}
   m_Father: {fileID: 104917419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -2057,172 +2076,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &2076624151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2076624152}
-  - component: {fileID: 2076624154}
-  - component: {fileID: 2076624153}
-  - component: {fileID: 2076624155}
-  m_Layer: 5
-  m_Name: KidsCount Label (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2076624152
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076624151}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2075618536}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 837.5137, y: 54.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2076624153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076624151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: <wiggle> > Initiate Adam
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 147b1ac507b3c5947b27599b774364a3, type: 2}
-  m_sharedMaterial: {fileID: -6489599372725255378, guid: 147b1ac507b3c5947b27599b774364a3, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 64.53
-  m_fontSizeBase: 64.53
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &2076624154
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076624151}
-  m_CullTransparentMesh: 1
---- !u!114 &2076624155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076624151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Febucci.TextAnimatorForUnity.TMP.Runtime::Febucci.TextAnimatorForUnity.TextMeshPro.TextAnimator_TMP
-  localSettings:
-    isResettingTimeOnNewText: 1
-    defaultEffectsMode: 1
-    timeScale: 0
-    defaultBehaviorTags: []
-    defaultAppearanceTags: []
-    defaultDisappearanceTags: []
-    isAnimatingBehaviors: 1
-    isAnimatingAppearances: 1
-    isAnimatingDisappearances: 1
-    useDynamicScaling: 1
-    referenceFontSize: 12
-  sharedSettings: {fileID: 11400000, guid: 503730955ff7ed9468949780cdcb9806, type: 2}
-  animationLoop: 0
-  databaseEffects: {fileID: 11400000, guid: 97da1bdf566b589458494ef757ccb8bb, type: 2}
-  styleSheet: {fileID: 11400000, guid: ba192cc0c25e54f2faf6411514bfe0b7, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
