@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using gishadev.gmtk.Countdown;
 using gishadev.gmtk.kids;
 using gishadev.tools.Audio;
+using gishadev.tools.SceneLoading;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -18,7 +19,8 @@ namespace gishadev.gmtk.Core
         [Inject] private IPlayerInputService _playerInputService;
         [Inject] private ICountdownController _countdownController;
         [Inject] private IAudioManager _audioManager;
-
+        [Inject] private ISceneLoader _sceneLoader;
+        
         public void Initialize()
         {
             _kidsController.AllKidsFound += OnAllKidsFound;
@@ -64,9 +66,7 @@ namespace gishadev.gmtk.Core
                     _locationController.CurrentLocation.ExitZone.SetArmed(true);
             }
             else
-            {
-                Debug.Log("GameController: all locations cleared - game won!");
-            }
+                _sceneLoader.AsyncSceneLoad(Constants.FINAL_SCENE_NAME);
         }
 
         private void OnLocationLoaded(Location location) => StartRound();

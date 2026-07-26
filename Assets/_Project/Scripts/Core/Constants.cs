@@ -6,6 +6,7 @@ namespace gishadev.gmtk.Core
     {
         public const string INTERACTABLE_LAYER_NAME = "Interactable";
         public const string MOVING_PLATFORM_TAG = "MovingPlatform";
+        public const string FINAL_SCENE_NAME = "Final";
         public static readonly int KID_STATE_ANIM = Animator.StringToHash("State");
         public static readonly int IS_RAISED_HAND_ANIM = Animator.StringToHash("IsRaisedHand");
         public static readonly int IS_COUNTING_ANIM = Animator.StringToHash("IsCounting");

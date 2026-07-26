@@ -18,3 +18,9 @@ MonoBehaviour:
     <FleeAmount>k__BackingField: 6
   - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: 91362435b1182c547bb231b1781f7592, type: 3}
     <FleeAmount>k__BackingField: 3
+  - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: 50f69b44f68be1c4091d7a2cb1987ee8, type: 3}
+    <FleeAmount>k__BackingField: 2
+  - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: 6add877f6f748524399ff0bd8d92b48e, type: 3}
+    <FleeAmount>k__BackingField: 1
+  - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: c7ce69c6b8cc50a4190fcd8dda58ee03, type: 3}
+    <FleeAmount>k__BackingField: 1
