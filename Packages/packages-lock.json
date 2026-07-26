@@ -30,6 +30,12 @@
       "dependencies": {},
       "hash": "ceac8d6946b1125fe782cd171fbcb245b567dbf9"
     },
+    "com.febucci.text-animator-unity": {
+      "version": "file:com.febucci.text-animator-unity",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.gishadev.tools": {
       "version": "https://github.com/gishadev/gishadev-tools.git",
       "depth": 0,
