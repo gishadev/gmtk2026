@@ -18,8 +18,9 @@ namespace gishadev.gmtk.Core
         private void FixedUpdate()
         {
             // Camera Input.
-            float mouseX = Mouse.current.delta.value.x * mouseSensitivity * Time.fixedDeltaTime;
-            float mouseY = Mouse.current.delta.value.y * mouseSensitivity * Time.fixedDeltaTime;
+            float sensitivity = mouseSensitivity * GameSettings.MouseSensitivity;
+            float mouseX = Mouse.current.delta.value.x * sensitivity * Time.fixedDeltaTime;
+            float mouseY = Mouse.current.delta.value.y * sensitivity * Time.fixedDeltaTime;
 
             // Camera/Body Rotating.
             _xRot -= mouseY;

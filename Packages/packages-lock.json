@@ -41,7 +41,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d5480affa9ce0898e9e307dd0aae375f2dea7cb4"
+      "hash": "c96ce57e50c993bbf88ebd8bc288856de29e0aeb"
     },
     "com.gishadev.unity-setup": {
       "version": "https://github.com/gishadev/unity-setup.git",
