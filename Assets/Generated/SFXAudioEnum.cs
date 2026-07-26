@@ -4,5 +4,6 @@ public enum SFXAudioEnum
 	JESUS,
 	OMINOUS,
 	STINGER_HIGH,
-	STINGER_LOW
+	STINGER_LOW,
+	TICK
 }

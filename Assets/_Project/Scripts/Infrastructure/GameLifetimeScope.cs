@@ -5,7 +5,6 @@ using gishadev.gmtk.Interactions;
 using gishadev.gmtk.Core;
 using gishadev.gmtk.Countdown;
 using gishadev.gmtk.kids;
-using gishadev.tools.Infrastructure;
 using gishadev.walkingSimulator.EventsManager;
 using gishadev.walkingSimulator.UI;
 using UnityEngine;
@@ -13,7 +12,7 @@ using VContainer;
 
 namespace gishadev.walkingSimulator.Infrastructure
 {
-    public class GameLifetimeScope : GishadevToolsLifetimeScope
+    public class GameLifetimeScope : AutoInjectLifetimeScope
     {
         [SerializeField] private CharacterMovementDataSO characterMovementDataSO;
         [SerializeField] private CharacterInteractionDataSO characterInteractionDataSO;

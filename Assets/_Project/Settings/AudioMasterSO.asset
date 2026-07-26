@@ -68,3 +68,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: be84287c7d2f2d840b0fe7779d03520f, type: 3}
     <InitialVolume>k__BackingField: 1
     <Pitch>k__BackingField: 1
+  - <Name>k__BackingField: tick
+    <AudioClips>k__BackingField:
+    - {fileID: 8300000, guid: 345ca47baf95b7d409138ce8a5ca936f, type: 3}
+    <InitialVolume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
