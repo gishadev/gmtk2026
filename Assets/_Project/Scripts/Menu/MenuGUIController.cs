@@ -27,7 +27,7 @@ namespace gishadev.gmtk.Menu
 
         public void OnPlayClicked()
         {
-            _sceneLoader.AsyncSceneLoad(Constants.GAME_SCENE_NAME);
+            _sceneLoader.AsyncSceneLoad(Constants.INTRO_SCENE_NAME);
         }
 
         public void OnQuitClicked()

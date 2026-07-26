@@ -25,6 +25,7 @@ namespace gishadev.gmtk.Core
         {
             _kidsController.AllKidsFound += OnAllKidsFound;
             _locationController.LocationLoaded += OnLocationLoaded;
+            _playerInputService.PausePerformed += OnPausePerformed;
 
             StartGameAsync().Forget();
         }
@@ -33,6 +34,7 @@ namespace gishadev.gmtk.Core
         {
             _kidsController.AllKidsFound -= OnAllKidsFound;
             _locationController.LocationLoaded -= OnLocationLoaded;
+            _playerInputService.PausePerformed -= OnPausePerformed;
         }
 
         // Runs once at the start of the Game (not per round): locks the player out,
@@ -70,5 +72,12 @@ namespace gishadev.gmtk.Core
         }
 
         private void OnLocationLoaded(Location location) => StartRound();
+
+        private void OnPausePerformed()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            _sceneLoader.AsyncSceneLoad(Constants.MENU_SCENE_NAME);
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace gishadev.gmtk.Input
         public event Action UsePerformed;
         public event Action NextUsablePerformed;
         public event Action PreviousUsablePerformed;
+        public event Action PausePerformed;
 
         private CustomInput _customInput;
 
@@ -52,6 +53,8 @@ namespace gishadev.gmtk.Input
 
             _customInput.Player.NextUsable.performed += OnNextUsablePerformed;
             _customInput.Player.PreviousUsable.performed += OnPreviousUsablePerformed;
+
+            _customInput.General.Pause.performed += OnPausePerformed;
         }
 
         public void Dispose()
@@ -79,6 +82,8 @@ namespace gishadev.gmtk.Input
             
             _customInput.Player.NextUsable.performed -= OnNextUsablePerformed;
             _customInput.Player.PreviousUsable.performed -= OnPreviousUsablePerformed;
+
+            _customInput.General.Pause.performed -= OnPausePerformed;
         }
 
         public void SetInputEnabled(bool enabled)
@@ -108,5 +113,6 @@ namespace gishadev.gmtk.Input
         
         private void OnPreviousUsablePerformed(InputAction.CallbackContext obj) => PreviousUsablePerformed?.Invoke();
         private void OnNextUsablePerformed(InputAction.CallbackContext obj) => NextUsablePerformed?.Invoke();
+        private void OnPausePerformed(InputAction.CallbackContext obj) => PausePerformed?.Invoke();
     }
 }
