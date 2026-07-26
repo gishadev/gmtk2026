@@ -27,9 +27,7 @@ namespace gishadev.gmtk.kids
 
         private readonly List<Kid> _kids = new();
         private readonly List<KidHidingSpot> _spots = new();
-
-        private int _fledCount;
-        private bool _adamFled;
+        private readonly HashSet<Kid> _designatedFleers = new();
 
         public KidsController(IObjectResolver objectResolver, KidsDataSO kidsData,
             ILocationController locationController, IEventBus eventBus)
@@ -74,9 +72,6 @@ namespace gishadev.gmtk.kids
 
             var factory = new KidsFactory(_objectResolver, _kidsData);
 
-            _fledCount = 0;
-            _adamFled = false;
-
             for (var i = 0; i < count; i++)
             {
                 var spot = GetRandomFreeSpot();
@@ -94,6 +89,33 @@ namespace gishadev.gmtk.kids
             }
 
             RemainingToFind = _kids.Count;
+            AssignFleeRoles();
+        }
+
+        // Decide up-front (and at random) which kids will flee once found, so the outcome
+        // no longer depends on the order in which the player finds them. The counts stay the
+        // same as before: FleeAmount kids flee in total, and Adam is always one of them.
+        private void AssignFleeRoles()
+        {
+            _designatedFleers.Clear();
+
+            // With no onward location, every kid is caught and made happy.
+            if (GetNextLocationPOI() == null)
+                return;
+
+            var adam = _kids.FirstOrDefault(k => k is Adam);
+            if (adam != null)
+                _designatedFleers.Add(adam);
+
+            var fleeAmount = _locationController.CurrentLocationData?.FleeAmount ?? 0;
+            var regulars = _kids
+                .Where(k => k != null && !(k is Adam))
+                .OrderBy(_ => UnityEngine.Random.value)
+                .ToList();
+
+            var regularFleers = Mathf.Clamp(fleeAmount - _designatedFleers.Count, 0, regulars.Count);
+            for (var i = 0; i < regularFleers; i++)
+                _designatedFleers.Add(regulars[i]);
         }
 
         public async void BeginSeeking()
@@ -111,30 +133,13 @@ namespace gishadev.gmtk.kids
             RemainingToFind--;
             kid.AssignedSpot?.Free();
 
-            // The current location dictates how many kids run away; the rest are caught (happy).
-            var fleeAmount = _locationController.CurrentLocationData?.FleeAmount ?? 0;
+            // Flee vs. happy is decided at spawn time (see AssignFleeRoles), so the order the
+            // player finds kids in doesn't affect who runs away.
             var nextLocation = GetNextLocationPOI();
-
-            if (nextLocation == null)
-                kid.MakeHappy();
-            else if (kid is Adam)
-            {
-                // Adam always flees; he can never be made happy.
-                _fledCount++;
-                _adamFled = true;
+            if (nextLocation != null && _designatedFleers.Contains(kid))
                 kid.FleeTo(nextLocation);
-            }
             else
-            {
-                var regularQuota = _adamFled ? fleeAmount : fleeAmount - 1;
-                if (_fledCount < regularQuota)
-                {
-                    _fledCount++;
-                    kid.FleeTo(nextLocation);
-                }
-                else
-                    kid.MakeHappy();
-            }
+                kid.MakeHappy();
 
             _eventBus.Publish(new KidFoundEvent(RemainingToFind));
 

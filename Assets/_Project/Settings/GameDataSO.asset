@@ -15,6 +15,6 @@ MonoBehaviour:
   <CharacterPrefab>k__BackingField: {fileID: 8518274837142395482, guid: 2d34ed76c0ca63447938b9c32d2452e7, type: 3}
   <Locations>k__BackingField:
   - <LocationPrefab>k__BackingField: {fileID: -2554451469958367027, guid: 784085e3e472a47419cf20622a23b2d6, type: 3}
-    <FleeAmount>k__BackingField: 5
+    <FleeAmount>k__BackingField: 6
   - <LocationPrefab>k__BackingField: {fileID: -2155122847335406176, guid: 7fc22e65af262fc45b48c552cdd9d87e, type: 3}
     <FleeAmount>k__BackingField: 3
